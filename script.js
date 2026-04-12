@@ -14,6 +14,9 @@ const lightboxCounter = document.querySelector(".lightbox-counter");
 const hero = document.querySelector(".hero");
 const heroMediaImage = document.querySelector(".hero-media img");
 const telegramForm = document.querySelector("#telegram-form");
+const scrollProgress = document.querySelector(".scroll-progress");
+const navLinks = document.querySelectorAll(".site-nav a[href^='#']");
+const trackedSections = document.querySelectorAll("main section[id]");
 let activeImageIndex = 0;
 
 if (menuButton && nav) {
@@ -79,6 +82,40 @@ if (backToTopButton) {
   backToTopButton.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+}
+
+if (scrollProgress) {
+  window.addEventListener(
+    "scroll",
+    () => {
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+      scrollProgress.style.transform = `scaleX(${Math.min(Math.max(progress, 0), 1)})`;
+    },
+    { passive: true }
+  );
+}
+
+if (navLinks.length && trackedSections.length) {
+  const updateActiveNav = () => {
+    const checkpoint = window.scrollY + window.innerHeight * 0.22;
+    let currentId = "";
+
+    trackedSections.forEach((section) => {
+      if (checkpoint >= section.offsetTop) {
+        currentId = section.id;
+      }
+    });
+
+    navLinks.forEach((link) => {
+      const isActive = link.getAttribute("href") === `#${currentId}`;
+      link.classList.toggle("is-active", isActive);
+    });
+  };
+
+  updateActiveNav();
+  window.addEventListener("scroll", updateActiveNav, { passive: true });
+  window.addEventListener("resize", updateActiveNav);
 }
 
 if (hero && heroMediaImage) {
