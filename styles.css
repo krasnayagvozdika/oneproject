@@ -730,14 +730,19 @@ h1 span:last-child {
     padding: 22px 18px 20px;
   }
 
-  h1 {
+  .hero-copy h1 {
     margin: 0 auto;
-    max-width: 9ch;
-    font-size: clamp(2.15rem, 7vw, 3.2rem);
-    line-height: 1;
+    width: 100%;
+    max-width: none;
+    font-size: clamp(1.9rem, 6.8vw, 2.8rem);
+    line-height: 1.04;
   }
 
-  h1 span:last-child {
+  .hero-copy h1 span {
+    white-space: normal;
+  }
+
+  .hero-copy h1 span:last-child {
     white-space: normal;
   }
 
