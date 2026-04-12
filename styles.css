@@ -6,6 +6,7 @@
   --muted: #6f675d;
   --line: rgba(23, 21, 19, 0.12);
   --accent: #bb6c2f;
+  --accent-soft: rgba(187, 108, 47, 0.12);
   --container: 1180px;
   --shadow: 0 24px 60px rgba(51, 35, 18, 0.08);
   --radius-xl: 30px;
@@ -63,8 +64,9 @@ img {
   top: 0;
   z-index: 20;
   backdrop-filter: blur(14px);
-  background: rgba(246, 240, 232, 0.84);
+  background: rgba(246, 240, 232, 0.9);
   border-bottom: 1px solid rgba(23, 21, 19, 0.07);
+  box-shadow: 0 12px 30px rgba(28, 18, 10, 0.04);
 }
 
 .header-row {
@@ -161,8 +163,8 @@ img {
 
 .hero-overlay {
   background:
-    radial-gradient(circle at 20% 18%, rgba(187, 108, 47, 0.2), transparent 26%),
-    linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.54));
+    radial-gradient(circle at 18% 20%, rgba(187, 108, 47, 0.24), transparent 24%),
+    linear-gradient(rgba(8, 7, 6, 0.2), rgba(8, 7, 6, 0.58));
 }
 
 .hero-inner {
@@ -180,20 +182,23 @@ img {
   max-width: 640px;
   color: #fff;
   margin-left: 8px;
-  padding: 28px 28px 24px;
-  border-radius: 28px;
-  background: linear-gradient(180deg, rgba(10, 10, 10, 0.22), rgba(10, 10, 10, 0.08));
-  backdrop-filter: blur(8px);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.14);
+  padding: 32px 32px 28px;
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(12, 10, 9, 0.28), rgba(12, 10, 9, 0.1)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 36px 90px rgba(0, 0, 0, 0.18);
 }
 
 .eyebrow,
 .section-label {
   margin: 0 0 14px;
   color: var(--accent);
-  font-size: 0.75rem;
+  font-size: 0.92rem;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -206,12 +211,12 @@ p {
 
 h1 {
   font-family: "Space Grotesk", "Manrope", sans-serif;
-  font-size: clamp(2.5rem, 4vw, 4.4rem);
+  font-size: clamp(2.6rem, 4vw, 4.5rem);
   font-weight: 800;
-  line-height: 0.95;
+  line-height: 0.92;
   max-width: 12ch;
   margin: 0;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.06em;
 }
 
 h1 span {
@@ -224,10 +229,10 @@ h1 span:last-child {
 
 .hero-text {
   max-width: 32ch;
-  margin: 18px 0 0;
-  color: rgba(255, 255, 255, 0.92);
-  font-size: clamp(1rem, 1.3vw, 1.16rem);
-  line-height: 1.7;
+  margin: 20px 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 1.75;
 }
 
 .hero-actions {
@@ -245,12 +250,12 @@ h1 span:last-child {
 }
 
 .hero-points span {
-  padding: 10px 14px;
+  padding: 10px 15px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   color: rgba(255, 255, 255, 0.88);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
 }
 
 .button {
@@ -296,8 +301,8 @@ h1 span:last-child {
 
 .section-head {
   display: grid;
-  gap: 10px;
-  margin-bottom: 34px;
+  gap: 12px;
+  margin-bottom: 38px;
 }
 
 .section-head--split {
@@ -309,8 +314,8 @@ h1 span:last-child {
 .section-head h2,
 .contact-banner__copy h2 {
   font-family: "Space Grotesk", "Manrope", sans-serif;
-  font-size: clamp(2rem, 3vw, 3rem);
-  line-height: 1.05;
+  font-size: clamp(2rem, 3vw, 2.85rem);
+  line-height: 1.02;
   font-weight: 800;
   letter-spacing: -0.04em;
 }
@@ -329,7 +334,7 @@ h1 span:last-child {
 }
 
 .direction-card {
-  background: rgba(255, 255, 255, 0.4);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.34));
   border: 1px solid rgba(23, 21, 19, 0.08);
   border-radius: var(--radius-xl);
   overflow: hidden;
@@ -446,10 +451,10 @@ h1 span:last-child {
 }
 
 .benefit-card {
-  background: rgba(255, 255, 255, 0.36);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.3));
   border: 1px solid rgba(23, 21, 19, 0.08);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 28px;
   box-shadow: var(--shadow);
 }
 
@@ -470,7 +475,7 @@ h1 span:last-child {
 }
 
 .pricing-row {
-  padding: 24px 0;
+  padding: 26px 0;
   border-top: 1px solid var(--line);
 }
 
@@ -546,7 +551,9 @@ h1 span:last-child {
   grid-template-columns: minmax(0, 1.2fr) minmax(320px, 380px);
   gap: 44px;
   align-items: center;
-  background: linear-gradient(135deg, #1f1b18, #38261a);
+  background:
+    radial-gradient(circle at top right, rgba(187, 108, 47, 0.12), transparent 28%),
+    linear-gradient(135deg, #1f1b18, #38261a);
   color: #fff;
   border-radius: 34px;
   padding: 42px 48px;
@@ -572,18 +579,26 @@ h1 span:last-child {
 .contact-form {
   width: 100%;
   display: grid;
-  gap: 12px;
-  margin-top: 4px;
+  gap: 13px;
+  margin-top: 8px;
 }
 
 .contact-input {
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.09);
   color: #fff;
-  padding: 15px 16px;
+  padding: 16px 17px;
   font: inherit;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: rgba(187, 108, 47, 0.65);
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
 }
 
 .contact-input::placeholder {
@@ -604,10 +619,16 @@ h1 span:last-child {
 .contact-link {
   margin-top: 0;
   color: rgba(255, 255, 255, 0.86);
+  transition: color 160ms ease;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: #fff;
 }
 
 .site-footer {
-  padding: 28px 0 40px;
+  padding: 34px 0 42px;
   border-top: 1px solid rgba(23, 21, 19, 0.1);
   background: rgba(255, 255, 255, 0.18);
 }
@@ -710,12 +731,12 @@ h1 span:last-child {
 
 .footer-brand {
   display: grid;
-  gap: 4px;
+  gap: 6px;
 }
 
 .footer-legal {
   display: grid;
-  gap: 4px;
+  gap: 8px;
 }
 
 @media (max-width: 1100px) {
