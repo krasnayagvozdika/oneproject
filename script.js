@@ -8,6 +8,13 @@ const portfolioImages = document.querySelectorAll(".portfolio-item img");
 const lightbox = document.querySelector(".lightbox");
 const lightboxImage = document.querySelector(".lightbox-image");
 const lightboxClose = document.querySelector(".lightbox-close");
+const lightboxPrev = document.querySelector(".lightbox-prev");
+const lightboxNext = document.querySelector(".lightbox-next");
+const lightboxCounter = document.querySelector(".lightbox-counter");
+const hero = document.querySelector(".hero");
+const heroMediaImage = document.querySelector(".hero-media img");
+const telegramForm = document.querySelector("#telegram-form");
+let activeImageIndex = 0;
 
 if (menuButton && nav) {
   menuButton.addEventListener("click", () => {
@@ -74,7 +81,30 @@ if (backToTopButton) {
   });
 }
 
-if (lightbox && lightboxImage && lightboxClose) {
+if (hero && heroMediaImage) {
+  window.addEventListener(
+    "scroll",
+    () => {
+      const offset = Math.min(window.scrollY * 0.18, 90);
+      heroMediaImage.style.transform = `scale(1.05) translateY(${offset}px)`;
+    },
+    { passive: true }
+  );
+}
+
+if (lightbox && lightboxImage && lightboxClose && lightboxPrev && lightboxNext && lightboxCounter) {
+  const updateLightbox = (index) => {
+    const image = portfolioImages[index];
+    if (!image) {
+      return;
+    }
+
+    activeImageIndex = index;
+    lightboxImage.src = image.currentSrc || image.src;
+    lightboxImage.alt = image.alt;
+    lightboxCounter.textContent = `${index + 1} / ${portfolioImages.length}`;
+  };
+
   const closeLightbox = () => {
     lightbox.hidden = true;
     lightbox.setAttribute("aria-hidden", "true");
@@ -82,16 +112,29 @@ if (lightbox && lightboxImage && lightboxClose) {
     lightboxImage.alt = "";
   };
 
-  portfolioImages.forEach((image) => {
+  const openLightbox = (index) => {
+    updateLightbox(index);
+    lightbox.hidden = false;
+    lightbox.setAttribute("aria-hidden", "false");
+  };
+
+  const showNextImage = () => {
+    updateLightbox((activeImageIndex + 1) % portfolioImages.length);
+  };
+
+  const showPreviousImage = () => {
+    updateLightbox((activeImageIndex - 1 + portfolioImages.length) % portfolioImages.length);
+  };
+
+  portfolioImages.forEach((image, index) => {
     image.addEventListener("click", () => {
-      lightboxImage.src = image.currentSrc || image.src;
-      lightboxImage.alt = image.alt;
-      lightbox.hidden = false;
-      lightbox.setAttribute("aria-hidden", "false");
+      openLightbox(index);
     });
   });
 
   lightboxClose.addEventListener("click", closeLightbox);
+  lightboxNext.addEventListener("click", showNextImage);
+  lightboxPrev.addEventListener("click", showPreviousImage);
 
   lightbox.addEventListener("click", (event) => {
     if (event.target === lightbox) {
@@ -103,5 +146,38 @@ if (lightbox && lightboxImage && lightboxClose) {
     if (event.key === "Escape" && !lightbox.hidden) {
       closeLightbox();
     }
+
+    if (event.key === "ArrowRight" && !lightbox.hidden) {
+      showNextImage();
+    }
+
+    if (event.key === "ArrowLeft" && !lightbox.hidden) {
+      showPreviousImage();
+    }
+  });
+}
+
+if (telegramForm) {
+  telegramForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(telegramForm);
+    const name = String(formData.get("name") || "").trim();
+    const contact = String(formData.get("contact") || "").trim();
+    const project = String(formData.get("project") || "").trim();
+
+    const message =
+      `Здравствуйте. Меня зовут ${name}. ` +
+      `Контакт: ${contact}. ` +
+      `Проект: ${project}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const appUrl = `tg://resolve?domain=work_ivan_3d&text=${encodedMessage}`;
+    const fallbackUrl = "https://t.me/work_ivan_3d";
+
+    window.location.href = appUrl;
+    window.setTimeout(() => {
+      window.open(fallbackUrl, "_blank", "noopener,noreferrer");
+    }, 500);
   });
 }

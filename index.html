@@ -64,6 +64,12 @@
                 <a class="button button-primary" href="#contact">Обсудить проект</a>
                 <a class="button button-secondary" href="#portfolio">Посмотреть работы</a>
               </div>
+              <div class="hero-points" aria-label="Преимущества">
+                <span>Интерьеры</span>
+                <span>Экстерьеры</span>
+                <span>Продукт</span>
+                <span>Промышленная графика</span>
+              </div>
             </div>
           </div>
         </section>
@@ -139,7 +145,7 @@
           </div>
 
           <div class="container portfolio-grid">
-            <article class="portfolio-item portfolio-item--large">
+            <article class="portfolio-item">
               <img src="assets/images/portfolio/portfolio-01.jpg" alt="Реализованный проект 1" loading="lazy">
             </article>
             <article class="portfolio-item">
@@ -151,11 +157,53 @@
             <article class="portfolio-item">
               <img src="assets/images/portfolio/portfolio-04.jpg" alt="Реализованный проект 4" loading="lazy">
             </article>
-            <article class="portfolio-item portfolio-item--large">
+            <article class="portfolio-item">
               <img src="assets/images/portfolio/portfolio-05.jpg" alt="Реализованный проект 5" loading="lazy">
             </article>
             <article class="portfolio-item">
               <img src="assets/images/portfolio/portfolio-06.jpg" alt="Реализованный проект 6" loading="lazy">
+            </article>
+            <article class="portfolio-item">
+              <img src="assets/images/portfolio/portfolio-07.jpg" alt="Реализованный проект 7" loading="lazy">
+            </article>
+            <article class="portfolio-item">
+              <img src="assets/images/portfolio/portfolio-08.jpg" alt="Реализованный проект 8" loading="lazy">
+            </article>
+            <article class="portfolio-item">
+              <img src="assets/images/portfolio/portfolio-09.jpg" alt="Реализованный проект 9" loading="lazy">
+            </article>
+            <article class="portfolio-item">
+              <img src="assets/images/portfolio/portfolio-10.jpg" alt="Реализованный проект 10" loading="lazy">
+            </article>
+            <article class="portfolio-item">
+              <img src="assets/images/portfolio/portfolio-11.png" alt="Реализованный проект 11" loading="lazy">
+            </article>
+            <article class="portfolio-item">
+              <img src="assets/images/portfolio/portfolio-12.jpg" alt="Реализованный проект 12" loading="lazy">
+            </article>
+            <article class="portfolio-item">
+              <img src="assets/images/portfolio/portfolio-13.jpg" alt="Реализованный проект 13" loading="lazy">
+            </article>
+            <article class="portfolio-item">
+              <img src="assets/images/portfolio/portfolio-14.jpg" alt="Реализованный проект 14" loading="lazy">
+            </article>
+            <article class="portfolio-item">
+              <img src="assets/images/portfolio/portfolio-15.jpg" alt="Реализованный проект 15" loading="lazy">
+            </article>
+            <article class="portfolio-item">
+              <img src="assets/images/portfolio/portfolio-16.jpg" alt="Реализованный проект 16" loading="lazy">
+            </article>
+            <article class="portfolio-item">
+              <img src="assets/images/portfolio/portfolio-17.jpg" alt="Реализованный проект 17" loading="lazy">
+            </article>
+            <article class="portfolio-item">
+              <img src="assets/images/portfolio/portfolio-18.jpg" alt="Реализованный проект 18" loading="lazy">
+            </article>
+            <article class="portfolio-item">
+              <img src="assets/images/portfolio/portfolio-19.jpg" alt="Реализованный проект 19" loading="lazy">
+            </article>
+            <article class="portfolio-item">
+              <img src="assets/images/portfolio/portfolio-20.jpg" alt="Реализованный проект 20" loading="lazy">
             </article>
           </div>
         </section>
@@ -278,6 +326,14 @@
               <a class="button button-primary" href="https://t.me/work_ivan_3d" target="_blank" rel="noreferrer">
                 Обсудить проект
               </a>
+              <form class="contact-form" id="telegram-form">
+                <input class="contact-input" type="text" name="name" placeholder="Ваше имя" required>
+                <input class="contact-input" type="text" name="contact" placeholder="Telegram или телефон" required>
+                <textarea class="contact-input contact-textarea" name="project" placeholder="Кратко о проекте" required></textarea>
+                <button class="button button-secondary button-secondary--solid" type="submit">
+                  Отправить в Telegram
+                </button>
+              </form>
               <a class="contact-link" href="tel:+375447350337">+375 44 735 03 37</a>
               <a class="contact-link" href="https://t.me/work_ivan_3d" target="_blank" rel="noreferrer">
                 Telegram: @work_ivan_3d
@@ -305,7 +361,10 @@
     <button class="back-to-top" type="button" aria-label="Наверх">Наверх</button>
 
     <div class="lightbox" aria-hidden="true" hidden>
+      <button class="lightbox-nav lightbox-prev" type="button" aria-label="Предыдущая работа">Назад</button>
       <button class="lightbox-close" type="button" aria-label="Закрыть">Закрыть</button>
+      <button class="lightbox-nav lightbox-next" type="button" aria-label="Следующая работа">Вперед</button>
+      <div class="lightbox-counter" aria-live="polite"></div>
       <img class="lightbox-image" alt="">
     </div>
 
