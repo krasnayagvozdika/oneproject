@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://deviartstudio.by/sitemap.xml
+Sitemap: https://xn--80akirbtiq.xn--90ais/sitemap.xml
