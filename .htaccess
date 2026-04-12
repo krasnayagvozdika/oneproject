@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteRule ^ https://xn--80akirbtiq.xn--90ais%{REQUEST_URI} [L,R=301]
