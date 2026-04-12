@@ -202,11 +202,9 @@ if (telegramForm) {
     const name = String(formData.get("name") || "").trim();
     const contact = String(formData.get("contact") || "").trim();
     const project = String(formData.get("project") || "").trim();
+    const greeting = name ? `Здравствуйте. Меня зовут ${name}. ` : "Здравствуйте. ";
 
-    const message =
-      `Здравствуйте. Меня зовут ${name}. ` +
-      `Контакт: ${contact}. ` +
-      `Проект: ${project}`;
+    const message = `${greeting}Контакт: ${contact}. Проект: ${project}`;
 
     const encodedMessage = encodeURIComponent(message);
     const appUrl = `tg://resolve?domain=work_ivan_3d&text=${encodedMessage}`;
