@@ -1,1 +1,9 @@
 .codex
+.tools
+
+.DS_Store
+Thumbs.db
+
+node_modules
+dist
+build
