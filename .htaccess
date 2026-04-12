@@ -1,3 +1,5 @@
 RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/googleeff960e889d042bd\.html$ [NC]
+RewriteCond %{REQUEST_URI} !^/yandex_7b4c394f812af3c4\.html$ [NC]
 RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
 RewriteRule ^ https://xn--80akirbtiq.xn--90ais%{REQUEST_URI} [L,R=301]
