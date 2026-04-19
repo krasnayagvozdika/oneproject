@@ -1,5 +1,6 @@
 .codex
 .tools
+.venv
 
 .DS_Store
 Thumbs.db
