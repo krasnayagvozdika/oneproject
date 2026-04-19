@@ -173,5 +173,12 @@ window.portfolioItems = [
     "orientation": "landscape",
     "width": 1600,
     "height": 1133
+  },
+  {
+    "file": "portfolio-26.jpg",
+    "alt": "Реализованный проект 26",
+    "orientation": "landscape",
+    "width": 1600,
+    "height": 1133
   }
 ];
