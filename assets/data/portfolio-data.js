@@ -138,5 +138,26 @@ window.portfolioItems = [
     "orientation": "landscape",
     "width": 2000,
     "height": 1500
+  },
+  {
+    "file": "portfolio-21.jpg",
+    "alt": "Реализованный проект 21",
+    "orientation": "square",
+    "width": 1200,
+    "height": 1200
+  },
+  {
+    "file": "portfolio-22.jpg",
+    "alt": "Реализованный проект 22",
+    "orientation": "square",
+    "width": 1200,
+    "height": 1200
+  },
+  {
+    "file": "portfolio-23.jpg",
+    "alt": "Реализованный проект 23",
+    "orientation": "square",
+    "width": 1200,
+    "height": 1200
   }
 ];
